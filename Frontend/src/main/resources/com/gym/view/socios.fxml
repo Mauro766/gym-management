@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gym.controller.SociosController" spacing="20" styleClass="page">
+ <HBox alignment="CENTER_LEFT"><VBox HBox.hgrow="ALWAYS"><Label text="Socios" styleClass="page-title"/><Label text="Administra los miembros de tu gimnasio." styleClass="page-subtitle"/></VBox><Button text="+  Nuevo socio" onAction="#newMember" styleClass="primary-button"/></HBox>
+ <HBox spacing="12"><TextField fx:id="searchField" promptText="Buscar por nombre o DNI..." styleClass="search-field" HBox.hgrow="ALWAYS"/><ComboBox fx:id="statusFilter" prefWidth="150" styleClass="filter-box"/></HBox>
+ <TableView fx:id="membersTable" VBox.vgrow="ALWAYS" styleClass="data-table"><columns><TableColumn fx:id="nameColumn" text="NOMBRE" prefWidth="210"/><TableColumn fx:id="dniColumn" text="DNI" prefWidth="130"/><TableColumn fx:id="phoneColumn" text="TELÉFONO" prefWidth="150"/><TableColumn fx:id="dateColumn" text="FECHA DE ALTA" prefWidth="150"/><TableColumn fx:id="statusColumn" text="ESTADO" prefWidth="120"/><TableColumn fx:id="actionColumn" text="ACCIÓN" prefWidth="150"/></columns></TableView>
+</VBox>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gym.controller.DashboardController" fitToWidth="true" styleClass="page-scroll">
+ <content><VBox spacing="24" styleClass="page"><HBox alignment="CENTER_LEFT"><VBox HBox.hgrow="ALWAYS"><Label text="Buen día, María" styleClass="page-title"/><Label text="Este es el resumen de tu gimnasio." styleClass="page-subtitle"/></VBox><Button text="+  Nuevo socio" onAction="#openPending" styleClass="secondary-button"/></HBox>
+  <GridPane hgap="16" vgap="16"><columnConstraints><ColumnConstraints hgrow="ALWAYS"/><ColumnConstraints hgrow="ALWAYS"/><ColumnConstraints hgrow="ALWAYS"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+   <VBox styleClass="stat-card" GridPane.columnIndex="0"><Label text="TOTAL DE SOCIOS" styleClass="stat-label"/><Label fx:id="totalSociosLabel" text="0" styleClass="stat-number"/><Label text="+8.4% este mes" styleClass="positive"/></VBox>
+   <VBox styleClass="stat-card" GridPane.columnIndex="1"><Label text="SOCIOS ACTIVOS" styleClass="stat-label"/><Label fx:id="activosLabel" text="0" styleClass="stat-number"/><Label text="92% del total" styleClass="stat-note"/></VBox>
+   <VBox styleClass="stat-card" GridPane.columnIndex="2"><Label text="PAGOS REALIZADOS" styleClass="stat-label"/><Label fx:id="pagosRealizadosLabel" text="0" styleClass="stat-number"/><Label text="Este periodo" styleClass="stat-note"/></VBox>
+   <VBox styleClass="stat-card,warning-card" GridPane.columnIndex="3"><Label text="PAGOS PENDIENTES" styleClass="stat-label"/><Label fx:id="pendientesLabel" text="0" styleClass="stat-number"/><Label text="Requieren atención" styleClass="warning-text"/></VBox>
+  </GridPane>
+  <HBox spacing="18"><VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="panel"><HBox><Label text="Pagos pendientes" styleClass="section-title"/><Region HBox.hgrow="ALWAYS"/><Button text="Ver todos" onAction="#openPending" styleClass="link-button"/></HBox><TableView fx:id="pendingTable" prefHeight="220" styleClass="data-table"><columns><TableColumn fx:id="pendingMemberColumn" text="SOCIO" prefWidth="180"/><TableColumn fx:id="pendingPeriodColumn" text="PERIODO" prefWidth="150"/><TableColumn fx:id="pendingAmountColumn" text="MONTO" prefWidth="100"/><TableColumn fx:id="pendingDueColumn" text="VENCIMIENTO" prefWidth="130"/></columns></TableView></VBox>
+   <VBox spacing="12" prefWidth="330" styleClass="panel"><Label text="Últimos socios registrados" styleClass="section-title"/><TableView fx:id="recentTable" prefHeight="220" styleClass="data-table"><columns><TableColumn fx:id="recentNameColumn" text="SOCIO" prefWidth="170"/><TableColumn fx:id="recentDniColumn" text="DNI" prefWidth="100"/><TableColumn fx:id="recentDateColumn" text="ALTA" prefWidth="100"/></columns></TableView></VBox>
+  </HBox>
+ </VBox></content>
+</ScrollPane>
